@@ -42,3 +42,7 @@ function checkKeyUP(e) {
     }
 
 }
+function howTo()
+{
+document.getElementById("howTo").innerHTML="Quan sát chỉ dẫn máy tính, lặp lại đúng thứ tự từng mũi tên để đi tiếp. Hãy xem giới hạn của bạn là bao nhiêu!"
+}
