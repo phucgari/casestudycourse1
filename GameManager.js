@@ -1,7 +1,7 @@
 class GameManager{
     constructor(keyset){
         this.data=[]
-        this.score=0
+        this.count=0
         this.gameState=false
         this.keySet=keyset
         this.delay=1000
@@ -27,34 +27,38 @@ class GameManager{
         if(this.gameState==false){
             return
         }
-        if(num==this.data[this.score]){
-            this.score++
+        if(num==this.data[this.count]){
+            this.count++
             document.getElementById("result").innerHTML="đúng r, tiếp tục đi"
         }else{
             document.getElementById("result").innerHTML="sai rồi"
-            this.score=0
+            this.count=0
         }
-        if(this.score==this.data.length){
+        if(this.count==this.data.length){
             document.getElementById("result").innerHTML="Đến lượt máy. bạn quan sát cho kĩ nhé"
             this.gameState=false
             this.generateRandomKey()
-            this.score=0
+            this.count=0
             this.visualize()
         }
-        this.visualScore()
+        this.visualCount()
     }
     generateRandomKey(){
         let key=Math.floor(Math.random()*4)+1
         console.log(key)
         this.data.push(key)
+        this.visualScore()
     }
-    visualScore(){
-        document.getElementById("score").innerHTML="Bộ đếm "+this.score
+    visualCount(){
+        document.getElementById("count").innerHTML="Bộ đếm "+this.count
     }
     init(){
         this.generateRandomKey()
-        this.visualScore()
+        this.visualCount()
         this.visualize()
+    }
+    visualScore(){
+        document.getElementById("score").innerHTML="Độ dài combo hiện tại: "+this.data.length
     }
 }
 let x=new GameManager("c")
