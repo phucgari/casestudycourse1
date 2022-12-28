@@ -1,7 +1,7 @@
 class GameManager{
     constructor(keyset){
         this.data=[]
-        this.count=0
+        this.score=0
         this.gameState=false
         this.keySet=keyset
         this.delay=1000
@@ -27,27 +27,36 @@ class GameManager{
         if(this.gameState==false){
             return
         }
-        if(num==this.data[this.count]){
-            this.count++
+        if(num==this.data[this.score]){
+            this.score++
             document.getElementById("result").innerHTML="đúng r, tiếp tục đi"
         }else{
             document.getElementById("result").innerHTML="sai rồi"
-            this.count=0
+            this.score=0
         }
-        if(this.count==this.data.length){
+        if(this.score==this.data.length){
             document.getElementById("result").innerHTML="Đến lượt máy. bạn quan sát cho kĩ nhé"
             this.gameState=false
             this.generateRandomKey()
-            this.count=0
+            this.score=0
             this.visualize()
         }
+        this.visualScore()
     }
     generateRandomKey(){
         let key=Math.floor(Math.random()*4)+1
         console.log(key)
         this.data.push(key)
     }
+    visualScore(){
+        document.getElementById("score").innerHTML="Bộ đếm "+this.score
+    }
+    init(){
+        this.generateRandomKey()
+        this.visualScore()
+        this.visualize()
+    }
 }
 let x=new GameManager("c")
-x.visualize()
+x.init()
 
