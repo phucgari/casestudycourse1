@@ -53,6 +53,8 @@ class GameManager{
         }else{
             document.getElementById("result").innerHTML="sai rồi"
             this.count=0
+            let fail=new Audio("/sound/wrongsound.mp3")
+            fail.play()
         }
         if(this.count==this.data.length){
             document.getElementById("result").innerHTML="Đến lượt máy. bạn quan sát cho kĩ nhé"
@@ -101,6 +103,7 @@ class GameManager{
         this.setColor(comcorlor,uparrowcor,downarrowcor,leftarrowcor,rightarrowcor)
         console.log (comcorlor+delay+uparrowcor+downarrowcor+leftarrowcor+rightarrowcor)
     }
+
 }
 let x=new GameManager("c")
 
