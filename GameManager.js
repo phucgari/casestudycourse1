@@ -5,11 +5,16 @@ class GameManager{
         this.gameState=false
         this.keySet=keyset
         this.delay=1000
+        this.comcolor="grey"
+        this.uparrowcor="red"
+        this.downarrowcor="blue"
+        this.leftarrowcor="green"
+        this.rightarrowcor="yellow"
     }
     async visualize(){
         await delay(this.delay)
         for(let i=0;i<this.data.length;i++){
-            this.lightUp(this.keySet+this.data[i],"grey")
+            this.lightUp(this.keySet+this.data[i])
             await delay(this.delay)
             this.lightDown(this.keySet+this.data[i])
             await delay(this.delay)
@@ -17,8 +22,23 @@ class GameManager{
         x.gameState=true
         document.getElementById("result").innerHTML="Bạn đã nhớ chưa? Đây là lượt của bạn"
     }
-    lightUp(keyid,color){
-        document.getElementById(keyid).style.backgroundColor=color
+    lightUp(keyid){
+        switch (keyid){
+            case 1 :
+                document.getElementById(keyid).style.backgroundColor=this.uparrowcor
+                break
+            case 2 :
+                document.getElementById(keyid).style.backgroundColor=this.downarrowcor
+                break
+            case 3 :
+                document.getElementById(keyid).style.backgroundColor=this.leftarrowcor
+                break
+            case 4 :
+                document.getElementById(keyid).style.backgroundColor=this.rightarrowcor
+                break
+            default:
+                document.getElementById(keyid).style.backgroundColor=this.comcolor
+        }
     }
     lightDown(keyid){
         document.getElementById(keyid).style.backgroundColor="white"
@@ -60,7 +80,28 @@ class GameManager{
     visualScore(){
         document.getElementById("score").innerHTML="Độ dài combo hiện tại: "+this.data.length
     }
+    setDelay(microsec){
+        this.delay=microsec
+    }
+    setColor(comcorlor,up,down,left,right){
+        this.comcolor=comcorlor
+        this.uparrowcor=up
+        this.downarrowcor=down
+        this.leftarrowcor=left
+        this.rightarrowcor=right
+    }
+    saveSetting(){
+        let comcorlor=document.getElementById("comcorlor").value
+        let delay=document.getElementById("settingSpeed").value
+        let uparrowcor=document.getElementById("uparrowcorlor").value
+        let downarrowcor=document.getElementById("downarrowcorlor").value
+        let leftarrowcor=document.getElementById("leftarrowcorlor").value
+        let rightarrowcor=document.getElementById("rightarrowcorlor").value
+        this.setDelay(delay)
+        this.setColor(comcorlor,uparrowcor,downarrowcor,leftarrowcor,rightarrowcor)
+        console.log (comcorlor+delay+uparrowcor+downarrowcor+leftarrowcor+rightarrowcor)
+    }
 }
 let x=new GameManager("c")
-x.init()
+
 
