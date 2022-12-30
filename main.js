@@ -72,22 +72,22 @@ function setting(){
 function switchToSoloMode(){
     let solomode=`
 <!--//up-->
-<button id="c1">&#8593</button>
+<img src="button/uparrownor.png" id="1" >
 <!--//down-->
-<button id="c2">&#8595</button>
+<img src="button/downarrownor.png" id="2" >
 <!--//left-->
-<button id="c3">&#8592</button>
+<img src="button/leftarrownor.png" id="3" >
 <!--//right-->
-<button id="c4">&#8594</button>
+<img src="button/rightarrownor.png" id="4" >
 <br>
 <!--//up-->
-<button id="1">&#8593</button>
+<img src="button/uparrownor.png" id="c1" >
 <!--//down-->
-<button id="2">&#8595</button>
+<img src="button/downarrownor.png" id="c2" >
 <!--//left-->
-<button id="3">&#8592</button>
+<img src="button/leftarrownor.png" id="c3" >
 <!--//right-->
-<button id="4">&#8594</button>
+<img src="button/rightarrownor.png" id="c4" >
 <p id="result"></p>
 <p id="count"></p>
 <p id="score"></p>`

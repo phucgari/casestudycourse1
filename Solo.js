@@ -26,23 +26,58 @@ class Solo {
     lightUp(keyid){
         switch (keyid){
             case 1 :
-                document.getElementById(keyid).style.backgroundColor=this.uparrowcor
+                document.getElementById(keyid).src="/button/uparrow"+this.uparrowcor+".png"
                 break
             case 2 :
-                document.getElementById(keyid).style.backgroundColor=this.downarrowcor
+                document.getElementById(keyid).src="/button/downarrow"+this.downarrowcor+".png"
                 break
             case 3 :
-                document.getElementById(keyid).style.backgroundColor=this.leftarrowcor
+                document.getElementById(keyid).src="/button/leftarrow"+this.leftarrowcor+".png"
                 break
             case 4 :
-                document.getElementById(keyid).style.backgroundColor=this.rightarrowcor
+                document.getElementById(keyid).src="/button/rightarrow"+this.rightarrowcor+".png"
                 break
-            default:
-                document.getElementById(keyid).style.backgroundColor=this.comcolor
+            case c1 :
+                document.getElementById(keyid).src="/button/uparrow"+ this.comcolor+".png"
+                break
+            case c2 :
+                document.getElementById(keyid).src="/button/downarrow"+ this.comcolor+".png"
+                break
+            case c3 :
+                document.getElementById(keyid).src="/button/leftarrow"+ this.comcolor+".png"
+                break
+            case c4 :
+                document.getElementById(keyid).src="/button/rightarrow"+ this.comcolor+".png"
+                break
         }
     }
     lightDown(keyid){
-        document.getElementById(keyid).style.backgroundColor="white"
+        switch (keyid){
+            case 1 :
+                document.getElementById(keyid).src="/button/uparrownor"+".png"
+                break
+            case 2 :
+                document.getElementById(keyid).src="/button/downarrownor"+".png"
+                break
+            case 3 :
+                document.getElementById(keyid).src="/button/leftarrownor"+".png"
+                break
+            case 4 :
+                document.getElementById(keyid).src="/button/rightarrownor"+".png"
+                break
+            case c1 :
+                document.getElementById(keyid).src="/button/uparrownor"+".png"
+                break
+            case c2 :
+                document.getElementById(keyid).src="/button/downarrownor"+".png"
+                break
+            case c3 :
+                document.getElementById(keyid).src="/button/leftarrownor"+".png"
+                break
+            case c4 :
+                document.getElementById(keyid).src="/button/rightarrownor"+".png"
+                break
+        }
     }
     async check(num){
         if(this.gameState==false){
