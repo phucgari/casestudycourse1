@@ -1,5 +1,17 @@
-body {
-
+.centre {
+    margin: auto;
+    width: 50%;
+    border: solid green;
+    padding: 10px;
+}
+h2{
+    margin: auto;
+    width: 100%;
+    padding: 10px;
     text-align: center;
+}
+#button{
+    text-align: center;
+    width: 100%;
 
 }

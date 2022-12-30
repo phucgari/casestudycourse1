@@ -64,33 +64,51 @@ function setting(){
             <option value="blue">blue</option>
             <option value="green">green</option>
         </select>
-        <p onclick="x.saveSetting()">save changes</p>
+        <br>
+        <input onclick="x.saveSetting()" type="button" value="Save changes">
     </fieldset>
 </form>`
     document.getElementById("hpcontent").innerHTML=setting
 }
 function switchToSoloMode(){
-    let solomode=`
-<!--//up-->
+    let solomode=`<div style="
+    content: '';
+    display: table;
+    clear: both;
+    margin: auto;
+    width: 50%;
+    border: solid green;
+    padding: 10px;">
+<div style="float: left;width: 50%;">
+<div style="margin:auto;width:50%"><!--//up-->
 <img src="button/uparrownor.png" id="1" >
-<!--//down-->
-<img src="button/downarrownor.png" id="2" >
+</div>
+<br>
 <!--//left-->
 <img src="button/leftarrownor.png" id="3" >
+<!--//down-->
+<img src="button/downarrownor.png" id="2" >
 <!--//right-->
 <img src="button/rightarrownor.png" id="4" >
-<br>
+</div>
+<div style="float: left;width: 50%;">
+<div style="margin:auto;width:50%">
 <!--//up-->
 <img src="button/uparrownor.png" id="c1" >
-<!--//down-->
-<img src="button/downarrownor.png" id="c2" >
+</div>
+<br>
 <!--//left-->
 <img src="button/leftarrownor.png" id="c3" >
+<!--//down-->
+<img src="button/downarrownor.png" id="c2" >
 <!--//right-->
 <img src="button/rightarrownor.png" id="c4" >
 <p id="result"></p>
 <p id="count"></p>
-<p id="score"></p>`
+<p id="score"></p>
+</div>
+</div>
+`
     document.write(solomode)
     x.initSolo()
     document.onkeydown = checkKeyDown;

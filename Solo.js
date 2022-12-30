@@ -37,16 +37,16 @@ class Solo {
             case 4 :
                 document.getElementById(keyid).src="/button/rightarrow"+this.rightarrowcor+".png"
                 break
-            case c1 :
+            case "c1" :
                 document.getElementById(keyid).src="/button/uparrow"+ this.comcolor+".png"
                 break
-            case c2 :
+            case "c2" :
                 document.getElementById(keyid).src="/button/downarrow"+ this.comcolor+".png"
                 break
-            case c3 :
+            case "c3" :
                 document.getElementById(keyid).src="/button/leftarrow"+ this.comcolor+".png"
                 break
-            case c4 :
+            case "c4" :
                 document.getElementById(keyid).src="/button/rightarrow"+ this.comcolor+".png"
                 break
         }
@@ -65,16 +65,16 @@ class Solo {
             case 4 :
                 document.getElementById(keyid).src="/button/rightarrownor"+".png"
                 break
-            case c1 :
+            case "c1" :
                 document.getElementById(keyid).src="/button/uparrownor"+".png"
                 break
-            case c2 :
+            case "c2" :
                 document.getElementById(keyid).src="/button/downarrownor"+".png"
                 break
-            case c3 :
+            case "c3" :
                 document.getElementById(keyid).src="/button/leftarrownor"+".png"
                 break
-            case c4 :
+            case "c4" :
                 document.getElementById(keyid).src="/button/rightarrownor"+".png"
                 break
         }
@@ -143,6 +143,7 @@ class Solo {
         this.setDelay(delay)
         this.setColor(comcorlor,uparrowcor,downarrowcor,leftarrowcor,rightarrowcor)
         console.log (comcorlor+delay+uparrowcor+downarrowcor+leftarrowcor+rightarrowcor)
+        alert("Saved!")
     }
 }
 let x=new Solo("c")
