@@ -103,6 +103,7 @@ function switchToSoloMode(){
 <img src="button/downarrownor.png" id="c2" >
 <!--//right-->
 <img src="button/rightarrownor.png" id="c4" >
+<button onclick="x.visualize()">Quên mẹ rồi. Cứu thua :(</button>
 <p id="result"></p>
 <p id="count"></p>
 <p id="score"></p>
