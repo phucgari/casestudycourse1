@@ -1,9 +1,8 @@
-class GameManager{
-    constructor(keyset){
+class Solo {
+    constructor(){
         this.data=[]
         this.count=0
         this.gameState=false
-        this.keySet=keyset
         this.delay=1000
         this.comcolor="grey"
         this.uparrowcor="red"
@@ -14,9 +13,11 @@ class GameManager{
     async visualize(){
         await delay(this.delay)
         for(let i=0;i<this.data.length;i++){
-            this.lightUp(this.keySet+this.data[i])
+            this.lightUp("c" +this.data[i])
+            let comsound=new Audio("sound/computersound.mp3")
+            await comsound.play()
             await delay(this.delay)
-            this.lightDown(this.keySet+this.data[i])
+            this.lightDown("c" +this.data[i])
             await delay(this.delay)
         }
         x.gameState=true
@@ -43,7 +44,7 @@ class GameManager{
     lightDown(keyid){
         document.getElementById(keyid).style.backgroundColor="white"
     }
-    check(num){
+    async check(num){
         if(this.gameState==false){
             return
         }
@@ -52,12 +53,17 @@ class GameManager{
             document.getElementById("result").innerHTML="đúng r, tiếp tục đi"
         }else{
             document.getElementById("result").innerHTML="sai rồi"
-            this.count=0
             let fail=new Audio("/sound/wrongsound.mp3")
             fail.play()
+            this.count=0
+
         }
         if(this.count==this.data.length){
             document.getElementById("result").innerHTML="Đến lượt máy. bạn quan sát cho kĩ nhé"
+            let win=new Audio("/sound/rightsound.mp3")
+            win.play()
+            alert("Congrat! Your max combo is now "+ this.data.length)
+            await delay(2000)
             this.gameState=false
             this.generateRandomKey()
             this.count=0
@@ -74,7 +80,7 @@ class GameManager{
     visualCount(){
         document.getElementById("count").innerHTML="Bộ đếm "+this.count
     }
-    init(){
+    initSolo(){
         this.generateRandomKey()
         this.visualCount()
         this.visualize()
@@ -103,8 +109,7 @@ class GameManager{
         this.setColor(comcorlor,uparrowcor,downarrowcor,leftarrowcor,rightarrowcor)
         console.log (comcorlor+delay+uparrowcor+downarrowcor+leftarrowcor+rightarrowcor)
     }
-
 }
-let x=new GameManager("c")
+let x=new Solo("c")
 
 

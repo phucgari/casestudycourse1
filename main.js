@@ -3,8 +3,11 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 function howTo()
 {
-document.getElementById("hpcontent").innerHTML="Quan sát chỉ dẫn máy tính, lặp lại đúng thứ tự từng mũi tên để đi tiếp. Hãy xem giới hạn của bạn là bao nhiêu!"
-}
+document.getElementById("hpcontent").innerHTML=`
+Solo: Quan sát chỉ dẫn máy tính, lặp lại đúng thứ tự từng mũi tên để đi tiếp. Hãy xem giới hạn của bạn là bao nhiêu!
+<br>
+`}
+//Duo: Đề bài do 2 người chơi tạo ra, Hãy xem ai là người chến thắng cuối cùng!
 function setting(){
     let setting=`<form>
     <fieldset>
@@ -89,24 +92,28 @@ function switchToSoloMode(){
 <p id="count"></p>
 <p id="score"></p>`
     document.write(solomode)
-    x.init()
-
+    x.initSolo()
     document.onkeydown = checkKeyDown;
+    let mousesound=new Audio("/sound/mousesound.mp3")
     function checkKeyDown(e) {
 
         e = e || window.event;
 
         if (e.keyCode == '38') {
             x.lightUp(1)
+            mousesound.play()
         }
         else if (e.keyCode == '40') {
             x.lightUp(2)
+            mousesound.play()
         }
         else if (e.keyCode == '37') {
             x.lightUp(3)
+            mousesound.play()
         }
         else if (e.keyCode == '39') {
             x.lightUp(4)
+            mousesound.play()
         }
 
     }
