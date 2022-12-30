@@ -15,6 +15,7 @@ class Solo {
         for(let i=0;i<this.data.length;i++){
             this.lightUp("c" +this.data[i])
             let comsound=new Audio("sound/computersound.mp3")
+            comsound.volume=0.2
             await comsound.play()
             await delay(this.delay)
             this.lightDown("c" +this.data[i])
@@ -89,13 +90,16 @@ class Solo {
         }else{
             document.getElementById("result").innerHTML="sai rồi"
             let fail=new Audio("/sound/wrongsound.mp3")
+            fail.volume=0.5
             fail.play()
+
             this.count=0
 
         }
         if(this.count==this.data.length){
             document.getElementById("result").innerHTML="Đến lượt máy. bạn quan sát cho kĩ nhé"
             let win=new Audio("/sound/rightsound.mp3")
+            win.volume=0.5
             win.play()
             alert("Chúc mừng, combo hiện tại của bạn có độ dài "+ this.data.length)
             await delay(2000)

@@ -113,6 +113,7 @@ function switchToSoloMode(){
     x.initSolo()
     document.onkeydown = checkKeyDown;
     let mousesound=new Audio("/sound/mousesound.mp3")
+    mousesound.volume=0.5
     function checkKeyDown(e) {
 
         e = e || window.event;
