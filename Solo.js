@@ -97,7 +97,7 @@ class Solo {
             document.getElementById("result").innerHTML="Đến lượt máy. bạn quan sát cho kĩ nhé"
             let win=new Audio("/sound/rightsound.mp3")
             win.play()
-            alert("Congrat! Your max combo is now "+ this.data.length)
+            alert("Chúc mừng, combo hiện tại của bạn có độ dài "+ this.data.length)
             await delay(2000)
             this.gameState=false
             this.generateRandomKey()
@@ -143,7 +143,7 @@ class Solo {
         this.setDelay(delay)
         this.setColor(comcorlor,uparrowcor,downarrowcor,leftarrowcor,rightarrowcor)
         console.log (comcorlor+delay+uparrowcor+downarrowcor+leftarrowcor+rightarrowcor)
-        alert("Saved!")
+        alert("Đã lưu!")
     }
 }
 let x=new Solo("c")
